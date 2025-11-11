@@ -1,4 +1,5 @@
 import { setup } from './core.ts'
+import { humanize } from './utils.ts'
 import type { Debug, Debugger } from './types.ts'
 
 /**
@@ -87,10 +88,6 @@ export function useColors(): boolean {
   return true
 }
 
-function humanize(value: any) {
-  return value
-}
-
 /**
  * Colorize log arguments if enabled.
  */
@@ -102,7 +99,7 @@ export function formatArgs(this: Debugger, args: [string, ...any[]]): void {
     (useColors ? ' %c' : ' ') +
     args[0] +
     (useColors ? '%c ' : ' ')
-  }+${humanize(this.diff)}`
+  }+${humanize(this.diff!)}`
 
   if (!useColors) {
     return

@@ -2,6 +2,7 @@ import { createRequire } from 'node:module'
 import { isatty } from 'node:tty'
 import { formatWithOptions, inspect } from 'node:util'
 import { setup } from './core.ts'
+import { humanize as _humanize } from './utils.ts'
 import type { Debug, Debugger, InspectOptions } from './types.ts'
 
 const require = createRequire(import.meta.url)
@@ -91,6 +92,13 @@ export function useColors(): boolean {
     : isatty(process.stderr.fd)
 }
 
+let humanize: typeof _humanize
+try {
+  humanize = require('ms')
+} catch {
+  humanize = _humanize
+}
+
 /**
  * Adds ANSI color escape codes if enabled.
  */
@@ -107,10 +115,6 @@ export function formatArgs(this: Debugger, args: [string, ...any[]]): void {
   } else {
     args[0] = `${getDate()}${name} ${args[0]}`
   }
-}
-
-function humanize(ms: number): number {
-  return ms
 }
 
 function getDate(): string {

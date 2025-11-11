@@ -71,3 +71,8 @@ export function matchesTemplate(search: string, template: string): boolean {
 
   return templateIndex === template.length
 }
+
+export function humanize(value: number): string | number {
+  if (value >= 1000) return `${(value / 1000).toFixed(1)}s`
+  return value
+}

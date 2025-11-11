@@ -44,7 +44,13 @@
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },
+  "peerDependencies": {
+    "ms": "^2.0.0"
+  },
   "peerDependenciesMeta": {
+    "ms": {
+      "optional": true
+    },
     "supports-color": {
       "optional": true
     }
