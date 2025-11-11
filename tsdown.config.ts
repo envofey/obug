@@ -1,14 +1,25 @@
 import { defineConfig } from 'tsdown'
 
-export default defineConfig({
-  entry: ['./src/{browser,node}.ts'],
-  platform: 'neutral',
-  target: 'es2015',
-  dts: true,
-  external: (id, importer) => {
-    if (importer?.endsWith('node.ts') && id.startsWith('node:')) {
-      return true
-    }
+export default defineConfig([
+  {
+    entry: ['./src/{browser,node}.ts'],
+    platform: 'neutral',
+    target: 'es2015',
+    dts: true,
+    external: (id, importer) => {
+      if (importer?.endsWith('node.ts') && id.startsWith('node:')) {
+        return true
+      }
+    },
+    hash: false,
   },
-  hash: false,
-})
+  {
+    entry: {
+      'browser.min': './src/browser.ts',
+    },
+    platform: 'browser',
+    target: 'es2015',
+    dts: false,
+    minify: true,
+  },
+])

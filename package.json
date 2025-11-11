@@ -29,6 +29,8 @@
     },
     "./package.json": "./package.json"
   },
+  "unpkg": "./dist/browser.min.js",
+  "jsdelivr": "./dist/browser.min.js",
   "publishConfig": {
     "access": "public"
   },
