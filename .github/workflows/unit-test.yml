@@ -18,6 +18,6 @@ jobs:
     uses: sxzz/workflows/.github/workflows/coverage.yml@v1
     needs: unit-test
     with:
-      test: pnpm vitest --project node --coverage
+      test: pnpm run test:coverage
     permissions:
       id-token: write
