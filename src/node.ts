@@ -15,7 +15,7 @@ export function log(...args: any[]): void {
 }
 
 export const colors: number[] =
-  process.stderr.getColorDepth() > 2
+  process.stderr.getColorDepth && process.stderr.getColorDepth() > 2
     ? [
         20, 21, 26, 27, 32, 33, 38, 39, 40, 41, 42, 43, 44, 45, 56, 57, 62, 63,
         68, 69, 74, 75, 76, 77, 78, 79, 80, 81, 92, 93, 98, 99, 112, 113, 128,
