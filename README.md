@@ -4,12 +4,17 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Unit Test][unit-test-src]][unit-test-href]
 
-A tiny JavaScript debugging utility forked from [debug](https://www.npmjs.com/package/debug), with TypeScript and ESM support.
+A lightweight JavaScript debugging utility, forked from [debug](https://www.npmjs.com/package/debug), featuring TypeScript and ESM support.
 
-## Differences from `debug`
+## Key Differences from `debug`
 
-- 🟢 TypeScript support
-- 🟢 ESM support
+- ✨ Minimal footprint
+- 📦 Zero dependencies
+- 📝 Full TypeScript support
+- 🚀 Native ESM compatibility
+- 🌐 Optimized for modern runtimes
+  - ES2015+ browsers
+  - Node.js 20.19 and above
 
 ## Installation
 
