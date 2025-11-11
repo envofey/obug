@@ -50,9 +50,6 @@
   "peerDependenciesMeta": {
     "ms": {
       "optional": true
-    },
-    "supports-color": {
-      "optional": true
     }
   },
   "devDependencies": {
