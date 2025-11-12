@@ -16,11 +16,20 @@ export interface Debugger {
   log: (...args: any[]) => any
   extend: (namespace: string, delimiter?: string) => Debugger
 
-  /** @private */
+  /**
+   * @internal
+   * @deprecated It will removed in the next major version. This is internal cache.
+   */
   diff?: number
-  /** @private */
+  /**
+   * @internal
+   * @deprecated It will removed in the next major version. This is internal cache.
+   */
   prev?: number
-  /** @private */
+  /**
+   * @internal
+   * @deprecated It will removed in the next major version. This is internal cache.
+   */
   curr?: number
 }
 
@@ -47,13 +56,30 @@ export interface Debug {
    */
   enabled: (namespaces: string) => boolean
 
-  formatArgs: (this: Debugger, args: [string, ...any[]]) => void
-  log: (...args: any[]) => void
-  selectColor: (namespace: string) => string | number
-
-  names: string[]
-  skips: string[]
-
   formatters: Formatters
   inspectOpts?: InspectOptions
+
+  /**
+   * @deprecated It will removed in the next major version.
+   */
+  formatArgs: (this: Debugger, args: [string, ...any[]]) => void
+  /**
+   * @deprecated It will removed in the next major version.
+   */
+  selectColor: (namespace: string) => string | number
+  /**
+   * @deprecated It will removed in the next major version.
+   */
+  log: (...args: any[]) => void
+
+  /**
+   * @internal
+   * @deprecated It will removed in the next major version. This is internal cache.
+   */
+  names: string[]
+  /**
+   * @internal
+   * @deprecated It will removed in the next major version. This is internal cache.
+   */
+  skips: string[]
 }

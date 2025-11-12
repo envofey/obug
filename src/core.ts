@@ -150,15 +150,17 @@ export function setup(
   }
 
   createDebug.namespaces = ''
-  createDebug.names = []
-  createDebug.skips = []
+  createDebug.formatters = {}
   createDebug.enable = enable
   createDebug.disable = disable
   createDebug.enabled = enabled
+
+  // deprecated
+  createDebug.names = []
+  createDebug.skips = []
   createDebug.selectColor = (ns) => selectColor(colors, ns)
   createDebug.formatArgs = formatArgs
   createDebug.log = log
-  createDebug.formatters = {}
 
   createDebug.enable(load())
 
