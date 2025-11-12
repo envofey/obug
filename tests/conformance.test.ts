@@ -13,6 +13,7 @@ const removedAPIs = new Set([
   'colors', // private API
   'useColors', // private API
   'inspectOpts', // private API
+  'module.exports',
 ])
 
 describe('conformance', () => {
