@@ -49,14 +49,6 @@
     "release": "bumpp",
     "prepublishOnly": "pnpm run build"
   },
-  "peerDependencies": {
-    "ms": "^2.0.0"
-  },
-  "peerDependenciesMeta": {
-    "ms": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@sxzz/eslint-config": "^7.3.0",
     "@sxzz/prettier-config": "^2.2.5",

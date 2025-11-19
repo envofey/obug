@@ -67,6 +67,7 @@ export function createDebug(
       formatters: this.formatters,
       inspectOpts: this.inspectOpts,
       log: this.log,
+      humanize: this.humanize,
     })
   }
   Object.assign(debug, options)
@@ -101,6 +102,7 @@ export function createDebug(
     debug.inspectOpts = {}
     debug.log = () => {}
     debug.enabled = false
+    debug.humanize = String
   }
 
   return debug

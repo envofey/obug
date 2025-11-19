@@ -1,4 +1,3 @@
-import { createRequire } from 'node:module'
 import { isatty } from 'node:tty'
 import { formatWithOptions, inspect } from 'node:util'
 import {
@@ -8,10 +7,8 @@ import {
   enabled,
   namespaces,
 } from './core.ts'
-import { humanize as _humanize, selectColor } from './utils.ts'
+import { humanize, selectColor } from './utils.ts'
 import type { Debugger, DebugOptions, InspectOptions } from './types.ts'
-
-const require = createRequire(import.meta.url)
 
 const colors: number[] =
   process.stderr.getColorDepth && process.stderr.getColorDepth() > 2
@@ -63,13 +60,6 @@ function useColors(): boolean {
     : isatty(process.stderr.fd)
 }
 
-let humanize: typeof _humanize
-try {
-  humanize = require('ms')
-} catch {
-  humanize = _humanize
-}
-
 function getDate(): string {
   if (inspectOpts.hideDate) {
     return ''
@@ -93,7 +83,7 @@ function formatArgs(
     const prefix = `  ${colorCode};1m${name} \u001B[0m`
 
     args[0] = prefix + args[0].split('\n').join(`\n${prefix}`)
-    args.push(`${colorCode}m+${humanize(diff)}\u001B[0m`)
+    args.push(`${colorCode}m+${this.humanize(diff)}\u001B[0m`)
   } else {
     args[0] = `${getDate()}${name} ${args[0]}`
   }
@@ -130,6 +120,7 @@ const defaultOptions: Omit<Required<DebugOptions>, 'color'> = {
   inspectOpts,
 
   log,
+  humanize,
 }
 
 export function createDebug(

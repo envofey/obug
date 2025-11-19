@@ -102,7 +102,7 @@ function formatArgs(
     (useColors ? ' %c' : ' ') +
     args[0] +
     (useColors ? '%c ' : ' ')
-  }+${humanize(diff)}`
+  }+${this.humanize(diff)}`
 
   if (!useColors) {
     return
@@ -160,6 +160,7 @@ const defaultOptions: Omit<Required<DebugOptions>, 'color'> = {
     },
   },
   inspectOpts: {},
+  humanize,
 
   log,
 }

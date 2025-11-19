@@ -30,6 +30,8 @@ export interface DebugOptions {
   formatters?: Formatters
   /** Node.js only */
   inspectOpts?: InspectOptions
+  /** Humanize a duration in milliseconds */
+  humanize?: (value: number) => string
 
   log?: (this: Debugger, ...args: any[]) => void
 }

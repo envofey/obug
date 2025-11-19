@@ -21,7 +21,8 @@ A lightweight JavaScript debugging utility, forked from [debug](https://www.npmj
 - 🚀 Native ESM compatibility
 - 🌐 Optimized for modern runtimes
   - ES2015+ browsers
-  - Node.js 18 and above
+  - Modern Node.js versions
+- 🎨 Customizable formatting
 
 ## Installation
 
