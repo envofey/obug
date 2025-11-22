@@ -23,33 +23,39 @@ const colors: number[] =
 
 const inspectOpts: InspectOptions = Object.keys(process.env)
   .filter((key) => /^debug_/i.test(key))
-  .reduce(
-    (obj, key) => {
-      // Camel-case
-      const prop = key
-        .slice(6)
-        .toLowerCase()
-        .replace(/_([a-z])/g, (_, k) => k.toUpperCase())
+  .reduce<Record<string, any>>((obj, key) => {
+    // Camel-case
+    const prop = key
+      .slice(6)
+      .toLowerCase()
+      .replace(/_([a-z])/g, (_, k) => k.toUpperCase())
 
-      // Coerce string value into JS value
-      let value: any = process.env[key]
-      if (value === 'null') {
-        value = null
-        // TODO perf: don't use regex
-      } else if (/^yes|on|true|enabled$/i.test(value)) {
-        value = true
-        // TODO perf: don't use regex
-      } else if (/^no|off|false|disabled$/i.test(value)) {
-        value = false
-      } else {
-        value = Number(value)
-      }
+    // Coerce string value into JS value
+    let value: any = process.env[key]
+    const lowerCase = typeof value === 'string' && value.toLowerCase()
+    if (value === 'null') {
+      value = null
+    } else if (
+      lowerCase === 'yes' ||
+      lowerCase === 'on' ||
+      lowerCase === 'true' ||
+      lowerCase === 'enabled'
+    ) {
+      value = true
+    } else if (
+      lowerCase === 'no' ||
+      lowerCase === 'off' ||
+      lowerCase === 'false' ||
+      lowerCase === 'disabled'
+    ) {
+      value = false
+    } else {
+      value = Number(value)
+    }
 
-      obj[prop] = value
-      return obj
-    },
-    {} as Record<string, any>,
-  )
+    obj[prop] = value
+    return obj
+  }, {})
 
 /**
  * Is stdout a TTY? Colored output is enabled when `true`.
