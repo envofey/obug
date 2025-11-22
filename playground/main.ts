@@ -1,6 +1,6 @@
-import { createDebug } from '../src/browser'
+import { createDebug, enable } from '../src/browser'
 
-createDebug.enable('test,test:subnamespace')
+enable('test,test:subnamespace')
 const debug = createDebug('test')
 debug('Hello World')
 
