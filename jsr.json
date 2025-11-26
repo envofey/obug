@@ -1,0 +1,18 @@
+{
+  "$schema": "https://jsr.io/schema/config-file.v1.json",
+  "name": "@sxzz/obug",
+  "version": "2.1.1",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/node.ts",
+    "./browser": "./src/browser.ts",
+    "./node": "./src/node.ts"
+  },
+  "publish": {
+    "include": [
+      "src",
+      "README.md",
+      "LICENSE"
+    ]
+  }
+}
