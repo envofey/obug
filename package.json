@@ -44,7 +44,7 @@
     "test": "vitest",
     "test:coverage": "vitest --project node --coverage",
     "play": "vite playground",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsgo --noEmit",
     "format": "prettier --cache --write .",
     "release": "bumpp",
     "prepublishOnly": "pnpm run build"
@@ -54,6 +54,7 @@
     "@sxzz/prettier-config": "^2.2.6",
     "@types/debug": "^4.1.12",
     "@types/node": "^24.10.1",
+    "@typescript/native-preview": "7.0.0-dev.20251202.1",
     "@vitest/browser-playwright": "^4.0.15",
     "@vitest/coverage-v8": "^4.0.15",
     "bumpp": "^10.3.2",
